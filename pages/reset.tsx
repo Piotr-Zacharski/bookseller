@@ -1,7 +1,8 @@
-import { Box, Button, FormControl, InputAdornment, TextField, Typography } from '@mui/material';
+import { Box, FormControl, InputAdornment, TextField, Typography } from '@mui/material';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import Head from 'next/head';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import CustomButton from '../components/CustomButton';
 
 const Reset = () => {
     const [email, setEmail] = useState<string>('');
@@ -18,7 +19,12 @@ const Reset = () => {
             </Head>
             <Typography
                 variant="h4"
-                style={{ textAlign: 'center', width: 300, padding: 10, margin: '0 auto' }}
+                style={{
+                    textAlign: 'center',
+                    width: 300,
+                    padding: 10,
+                    margin: '0 auto',
+                }}
             >
                 Reset password
             </Typography>
@@ -39,9 +45,7 @@ const Reset = () => {
                         }}
                     />
                 </FormControl>
-                <Button variant="contained" style={{ width: '500px', padding: '16px' }} sx={{ m: 1 }}>
-                    Reset password
-                </Button>
+                <CustomButton>Reset password</CustomButton>
             </Box>
         </>
     );

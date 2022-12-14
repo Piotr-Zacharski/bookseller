@@ -4,9 +4,10 @@ import PasswordIcon from '@mui/icons-material/Password';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import FormControl from '@mui/material/FormControl';
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import CustomButton from '../components/CustomButton';
 
 const Register = () => {
     const [email, setEmail] = useState<string>('');
@@ -32,7 +33,12 @@ const Register = () => {
             </Head>
             <Typography
                 variant="h4"
-                style={{ textAlign: 'center', width: 300, padding: 10, margin: '0 auto' }}
+                style={{
+                    textAlign: 'center',
+                    width: 300,
+                    padding: 10,
+                    margin: '0 auto',
+                }}
             >
                 Register
             </Typography>
@@ -85,9 +91,7 @@ const Register = () => {
                         }}
                     />
                 </FormControl>
-                <Button variant="contained" style={{ width: '500px', padding: '16px' }} sx={{ m: 1 }}>
-                    Register
-                </Button>
+                <CustomButton>Register</CustomButton>
             </Box>
         </>
     );

@@ -17,7 +17,7 @@ const pages = [
 
 function Nav() {
     return (
-        <AppBar position="static">
+        <AppBar position="static" elevation={0} style={{ backgroundColor: '#0A1929' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Image
@@ -46,10 +46,21 @@ function Nav() {
                             BookSeller
                         </Typography>
                     </Box>
-                    <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'flex' } }}>
+                    <Box
+                        sx={{
+                            flexGrow: 0,
+                            display: { xs: 'flex', md: 'flex' },
+                        }}
+                    >
                         {pages.map(page => (
                             <Link href={`/${page.path}`}>
-                                <Button variant="outlined" style={{ color: 'white' }}>
+                                <Button
+                                    variant="text"
+                                    style={{
+                                        color: 'white',
+                                        backgroundColor: '#0A1929',
+                                    }}
+                                >
                                     <Typography key={page.name}>{page.name}</Typography>
                                 </Button>
                             </Link>
@@ -60,4 +71,5 @@ function Nav() {
         </AppBar>
     );
 }
+
 export default Nav;
